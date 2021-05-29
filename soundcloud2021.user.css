@@ -278,7 +278,7 @@ visibility:hidden;
   }
   .truncatedAudioInfo.m-overflow.m-collapsed .truncatedAudioInfo__wrapper::after {
     background: #111;
-    background: linear-gradient(rgba(17, 17, 17, 0), rgba(17, 17, 17, 0.5) 90%, #111)
+    background: linear-gradient(rgba(17, 17, 17, 0), rgba(17, 17, 17, 0.5) 22%, #111)
   }
   .sc-snippet-badge-grey {
     border-color: #333
@@ -799,10 +799,10 @@ background:radial-gradient(ellipse at top, #2d000030, #4800004d),radial-gradient
     background-color: #111
   }
   .l-vertical-bar {
-      animation: fadeinside linear 0.81s;
+      animation: fadeinside linear 0.691s;
+      animation-delay:0.9s;
       animation-iteration-count: 1;
       animation-fill-mode: both;
-      animation-delay:0.54s;
   }
   .soundBadge,
   .infoStats,
@@ -814,11 +814,17 @@ background:radial-gradient(ellipse at top, #2d000030, #4800004d),radial-gradient
   .fullListenHero,
   .soundInSetsModule,
   .relatedSoundsModule,
-  .userMain {
+  .userStream__list,
+  .spotlight,
+  .l-sidebar-right,
+  .l-content,
+  .l-collection,
+  .userStream .lazyLoadingList,
+  .userstream__header {
       animation: fadeinside linear 0.81s;
       animation-iteration-count: 1;
       animation-fill-mode: both;
-      animation-delay:0.369s;
+      animation-delay:0.4s;
   }
   .l-listen-wrapper .l-about-main {
       padding-top:9px!important;
@@ -827,21 +833,14 @@ background:radial-gradient(ellipse at top, #2d000030, #4800004d),radial-gradient
       animation-fill-mode: both;
       animation-delay:0.45s;
   }
-  .l-sidebar-right,
-  .l-content {
-      animation: fadeinside linear 0.81s;
-      animation-iteration-count: 1;
-      animation-fill-mode: both;
-      animation-delay:0.369s;
-  }
   .header__inner,
   .profileHeaderInfo__additional,
   .profileHeaderInfo__userName,
   .profileHeaderInfo__verifiedBadge {
-      animation: fadeinside linear 0.81s;
+      animation: fadeinside linear 1.369s;
       animation-iteration-count: 1;
       animation-fill-mode: both;
-      animation-delay:0.369s;
+      animation-delay:1.8s;
   }
   .loading.regular {
     visibility:hidden!important
@@ -982,6 +981,9 @@ background:radial-gradient(ellipse at top, #2d000030, #4800004d),radial-gradient
   .sc-border-light {
     border-color: #ff440018!important;
   }
+  .sound__trackList .sc-border-light {
+    border-bottom-width:0px;
+  }
   .stats__empty {
     background: #111;
     color: #999
@@ -1110,8 +1112,20 @@ background:radial-gradient(ellipse at top, #2d000030, #4800004d),radial-gradient
     filter: hue-rotate(361deg) !important;
   }
   .followingsModule {
-    max-block-size: 1px;
+    max-block-size: 0px;
+    height:0px;
+    width:0px;
+    margin-bottom:-8px!important;
     visibility: hidden;
+  }
+  .commentBadgeList__item.sc-border-light-top {
+    filter:none!important;
+  }
+ .commentsModule .sidebarContent {
+   margin-top:-3px;
+  }
+  .usersList.floating.user-avatar-badge-hover {
+    margin-top:-3px;
   }
   .infoStats,
   .sidebarModule {
@@ -1276,7 +1290,7 @@ background:radial-gradient(ellipse at top, #2d000030, #4800004d),radial-gradient
     margin-right: 20px;
   }
   .fullHero__foreground {
-    padding: 27px 540px 23px 9px;
+    padding: 24px 540px 23px 15px;
   }
   .soundList__item:first-child {
     padding-top: 3px;
@@ -1318,7 +1332,7 @@ background:radial-gradient(ellipse at top, #2d000030, #4800004d),radial-gradient
   .sc-classic .compactTrackListItem__number,
   .sc-classic .compactTrackListItem__trackTitle,
   .sc-classic .queueItemView__title {
-    margin-right: 1px;
+    margin-right: 4px;
   }
   .queueItemView__context {
     max-width:220px!important;
@@ -1406,7 +1420,7 @@ background:radial-gradient(ellipse at top, #2d000030, #4800004d),radial-gradient
     color: #d9621d!important;
   }
   .sc-button-small.sc-button-cta.sc-button-follow:before {
-    background-color: #48d1ff;
+    background-color: #0cfc;
     width: 22px;
     left: -1px;
     border-style: solid;
@@ -1913,7 +1927,8 @@ background:radial-gradient(ellipse at bottom, #2d070063, #00000000),radial-gradi
   filter:drop-shadow(0px 0px 3px #f30)!important;
 }
 .commentBadge__title {
-  margin-right:93px;
+  overflow:hidden;
+  max-height:18px;
 }
 .sc-classic .commentBadge__time {
   color:#504040;
@@ -2069,13 +2084,26 @@ color:#f40!important;
 filter:drop-shadow(0px 0px 2px #930000);
 }
 .commentItem__controls .sc-button-reply.sc-button-small.commentItem__replyButton {
-  line-height:16px!important;
+  line-height:17px!important;
+  font-size:12px;
 }
 .commentItem__controls .sc-button-reply.sc-button-small.commentItem__replyButton:hover {
-  color:#f40!important;
+  color:#f50!important;
+}
+.commentItem__controls .sc-button-reply {
+  transition:all 0.272s linear;
+}
+.commentItem .sc-button-reply {
+  animation: fadeoutplay linear 0.272s!important;
+}
+.commentItem:hover .sc-button-reply {
+  animation: fadeinside linear 0.63s!important;
+}
+.sc-button-small.sc-button-reply:before {
+filter:invert(99%) contrast(1%) drop-shadow(0px 0px 0px #f40)!important;
 }
 .sc-button-small.sc-button-reply:hover:before {
-filter:invert(99%) sepia(9999%) saturate(9900%) hue-rotate(369deg) brightness(1800%) contrast(100%) drop-shadow(0px 0px 4px #ff330081)!important;
+filter:invert(99%) sepia(9999%) saturate(9900%) hue-rotate(369deg) brightness(1800%) contrast(100%) drop-shadow(0px 0px 3px #ff3300c1)!important;
 }
 .sc-button-delete:before {
   left:4px!important;
@@ -2106,6 +2134,15 @@ padding: 11px 11px 11px 0;
   border-top:2px solid #ff4400a9!important;
   border-bottom:2px solid #ff4400a9!important;
     z-index:9999!important;
+}
+.sc-button-queue.addToNextUp.sc-button.sc-button-small.sc-button-responsive:hover {
+background: radial-gradient(ellipse at bottom, #2d070063, #00000000),radial-gradient(ellipse at top, #8c1300, #00000072);
+}
+.sc-button-queue.addToNextUp.sc-button.sc-button-small.sc-button-responsive:hover:before {
+filter:invert(1)drop-shadow(0px 0px 2px #ffcaa099)!important;
+}
+.sc-button-queue.addToNextUp.sc-button.sc-button-small.sc-button-responsive.sc-button-selected:hover:before {
+filter:invert(0)drop-shadow(0px 0px 2px #f30)!important;
 }
 .sc-button-addtoset:hover {
   z-index:9999!important;
@@ -2286,9 +2323,11 @@ left:13px;
 }
 .profileHeaderBackground__visual {
   transition: all 3s linear!important;
+  transition-delay:0.009s!important;
 }
 .profileHeader .image__full {
   transition: all 4.5s linear!important;
+  transition-delay:1.71s!important;
 }
 .profileHeader {
   filter:contrast(100%)!important;
@@ -2602,4 +2641,21 @@ animation: fadeinsider linear 0.54s!important;
 }
 .playableTile__actions, .playableTile__description, .playableTile__playButton {
     transition: opacity 0.81s,visibility 0.81s;
+}
+.userSidebar.sc-clearfix.sc-browsers-enable-gpu.l-fixed {
+transition:all 0.18s linear;
+margin-top:-45px;
+}
+.l-top.sc-border-box.g-z-index-fixed {
+  background:#111;
+}
+.userNetworkComments__item.sc-border-light-top {
+  filter:none;
+}
+.commentBadge__title .sc-link-light.sc-link-secondary {
+ transition:all 0.09s linear;
+}
+.commentBadge__body.sc-font-light a {
+ color:#f30!important;
+  font-weight:900;
 }
