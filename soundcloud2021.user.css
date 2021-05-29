@@ -193,8 +193,8 @@ visibility:hidden;
     filter: invert(0.93)
   }
   .truncatedUserDescription.m-overflow.m-collapsed .truncatedUserDescription__wrapper::after {
-    background: #111111;
-    background: linear-gradient(#0000, #ff330012);
+    height: 4px;
+    background: linear-gradient(hsla(0,0%,0%,0),#ffffff0a);
   }
   .readMoreTile__countWrapper {
     background-color: #111111;
@@ -265,7 +265,6 @@ visibility:hidden;
     background: #0a0a0a;
     background: linear-gradient(to right, rgba(2, 0, 1, 0), #ff330017 45px);
     border-radius:4px;
-    margin-right:-12px;
   }
   .trackItem__additional {
   padding: 0 9px 0 1%;
@@ -301,7 +300,7 @@ visibility:hidden;
   .l-footer.standard,
   .l-fixed-top-one-column > .l-top,
   .sound__soundActions {
-    background: #111
+    background: #1110;
   }
   .sc-buylink-itunes:before,
   .license__icon {
@@ -799,16 +798,53 @@ background:radial-gradient(ellipse at top, #2d000030, #4800004d),radial-gradient
   .quotaMeterWrapper {
     background-color: #111
   }
+  .l-vertical-bar {
+      animation: fadeinside linear 0.81s;
+      animation-iteration-count: 1;
+      animation-fill-mode: both;
+      animation-delay:0.54s;
+  }
+  .soundBadge,
+  .infoStats,
+  .usersList,
+  .sidebarModule,
+  .userAvatarBadge,
+  .commentBadge,
+  .sidebarHeader,
+  .fullListenHero,
+  .soundInSetsModule,
+  .relatedSoundsModule,
+  .userMain {
+      animation: fadeinside linear 0.81s;
+      animation-iteration-count: 1;
+      animation-fill-mode: both;
+      animation-delay:0.369s;
+  }
   .l-listen-wrapper .l-about-main {
       padding-top:9px!important;
-      animation: fadeinside linear 0.36s;
+      animation: fadeinside linear 0.81s;
       animation-iteration-count: 1;
       animation-fill-mode: both;
+      animation-delay:0.45s;
   }
-  .l-sidebar-right {
-      animation: fadeinside linear 0.22s;
+  .l-sidebar-right,
+  .l-content {
+      animation: fadeinside linear 0.81s;
       animation-iteration-count: 1;
       animation-fill-mode: both;
+      animation-delay:0.369s;
+  }
+  .header__inner,
+  .profileHeaderInfo__additional,
+  .profileHeaderInfo__userName,
+  .profileHeaderInfo__verifiedBadge {
+      animation: fadeinside linear 0.81s;
+      animation-iteration-count: 1;
+      animation-fill-mode: both;
+      animation-delay:0.369s;
+  }
+  .loading.regular {
+    visibility:hidden!important
   }
   .listenEngagement__commentForm {
     margin-bottom:14px;
@@ -1132,7 +1168,7 @@ background:radial-gradient(ellipse at top, #2d000030, #4800004d),radial-gradient
     left:21px;
     right:408px;
   }
-  .infoStats__description {
+  .infoStats__description p {
     margin-bottom: 4px;
     padding-top:4px;
     color: #f9631c;
@@ -1226,9 +1262,15 @@ background:radial-gradient(ellipse at top, #2d000030, #4800004d),radial-gradient
   }
   .playButton.m-stretch {
     border-radius: 27px;
-    filter: drop-shadow(0px 0px 2px #ff511b);
-    border-color: #ff511b;
-    background-color: #ff511b;
+    filter: drop-shadow(0px 0px 3px #f40);
+    border-color: #f40;
+    background-color: #f40;
+  }
+  .playButton:hover {
+    border-color: #f50!important;
+    background-color: #ff3300c9!important;
+    filter: drop-shadow(0px 0px 9px #f40)!important;
+    box-shadow:0px 0px 9px #f40!important;
   }
   .soundTitle__playButtonHero {
     margin-right: 20px;
@@ -1995,18 +2037,20 @@ background:radial-gradient(ellipse at bottom, #9122000f, #111),radial-gradient(e
 }
 .sc-type-small.sc-text-small a:link:not(.g-link-user) {
     filter:drop-shadow(0px 0px 1px #f20c);
-  color:#f30!important;
+  transition:all 0.22s linear;
 }
-.sc-type-small.sc-text-small a:link:hover {
+.sc-type-small.sc-text-small:not(.trackItem) a:link:hover {
     color:#fff0f0!important;
      filter:drop-shadow(0px 0px 2px #8c1c00);
   }
 .g-link-user {
   filter:drop-shadow(0px 0px 1px #ff2f00);
   color:#f81!important;
+  transition:all 0.45s linear;
 }
 .g-link-user:hover {
   color:#f40!important;
+  transition:all 0.45s linear;
 }
 .sc-button {
   transition: all 0.45s linear;
@@ -2139,8 +2183,8 @@ visibility:hidden;
   padding-right:8px!important;
 }
 .trackItem__additional {
-  padding-right:0px;
-  margin-right:-4px;
+  padding-right:13px;
+  margin-right:-12px;
 }
 .trackItem__image {
   padding-left:1px
@@ -2499,4 +2543,63 @@ overflow:visible;
 }
 .listenDetails__trackList .sc-button:hover {
   box-shadow:0px 0px 4px #f20!important;
+}
+.dialog.sc-border-box.g-z-index-overlay.rounded.dialog__centertop {
+  animation-name: hovername;
+  animation-timing-function: linear;
+  animation-duration: 0.31s;
+  animation-iteration-count:1;
+}
+.dialog.sc-border-box.g-z-index-overlay.rounded.dialog__centertop .sc-artwork {
+transition:all 0.3s linear!important;
+}
+@keyframes hovername {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+.truncatedAudioInfo__content .sc-type-small.sc-text-small a:link {
+  color:#f50!important;
+}
+.truncatedAudioInfo__content .sc-type-small.sc-text-small a:link:hover {
+color:#fff0f0!important;
+filter:drop-shadow(0px 0px 2px #8c1c00);
+}
+.truncatedAudioInfo__content .g-link-user:hover {
+color:#fff0f0!important;
+filter:drop-shadow(0px 0px 1px #ffffff81)!important;
+}
+.snippetUXPlayButton.sc-button-play.playButton.sc-button.sc-button-xlarge.sc-button-pause:before {
+  transition: all 0.21s linear;
+}
+@keyframes fadeoutplay {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+@keyframes fadeinsider {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+.soundBadge.hover .soundBadge__playButton {
+animation: fadeinsider linear 0.54s!important;
+}
+.soundBadge__playButton,
+.soundBadge .snippetUXPlayButton.sc-button-play.playButton.sc-button.sc-button-large,
+.soundBadge .sc-button-play {
+  transition:all 0.270s linear!important;
+  animation: fadeoutplay linear 0.618s;
+}
+.playableTile__actions, .playableTile__description, .playableTile__playButton {
+    transition: opacity 0.81s,visibility 0.81s;
 }
