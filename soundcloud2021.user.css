@@ -136,11 +136,11 @@ visibility:hidden;
   }
   .sc-classic .g-tabs-link,
   .sc-classic .g-tabs-link:visited {
-    color: #ccc
+    color: #fff;
   }
   .sc-classic .g-tabs-link:hover,
   .sc-classic .g-tabs-link:focus {
-    color: #ccc;
+    color: #f40;
     border-color: #ccc
   }
   body,
@@ -837,10 +837,10 @@ background:radial-gradient(ellipse at top, #2d000030, #4800004d),radial-gradient
   .profileHeaderInfo__additional,
   .profileHeaderInfo__userName,
   .profileHeaderInfo__verifiedBadge {
-      animation: fadeinside linear 1.369s;
+      animation: fadeinside linear 1.633s;
       animation-iteration-count: 1;
       animation-fill-mode: both;
-      animation-delay:1.8s;
+      animation-delay:2.3s;
   }
   .loading.regular {
     visibility:hidden!important
@@ -1420,12 +1420,12 @@ background:radial-gradient(ellipse at top, #2d000030, #4800004d),radial-gradient
     color: #d9621d!important;
   }
   .sc-button-small.sc-button-cta.sc-button-follow:before {
-    background-color: #0cfc;
+    background-color: #0afc;
     width: 22px;
     left: -1px;
     border-style: solid;
     border-width: 1px;
-    border-color: #48d1ff;
+    border-color: #12c0ff;
     border-radius: 12%;
   }
   .sc-button-active:not(.sc-button-nostyle):not(:hover):not(.sc-button-transparent),
@@ -2015,7 +2015,7 @@ left:5px!important;
 }
 .tabs__tabs {
   background:#fff0;
-  padding-bottom:9px;
+  padding-bottom:6px;
 }
 .sc-button-follow.sc-button.sc-button-medium.sc-button-responsive.sc-button-cta.sc-button-primary:before {
   filter:drop-shadow(0px 0px 1px #ffffffc1)opacity(63%)!important;
@@ -2322,12 +2322,12 @@ filter:saturate(145%)contrast(145%)brightness(111%);
 left:13px;
 }
 .profileHeaderBackground__visual {
-  transition: all 3s linear!important;
-  transition-delay:0.009s!important;
+  transition: all 2.1s linear!important;
+  transition-delay:0.000s!important;
 }
 .profileHeader .image__full {
-  transition: all 4.5s linear!important;
-  transition-delay:1.71s!important;
+  transition: all 5.4s linear!important;
+  transition-delay:2.3s!important;
 }
 .profileHeader {
   filter:contrast(100%)!important;
@@ -2374,26 +2374,25 @@ filter:contrast(123%)saturate(144%);
 }
 .modal__content .addToPlaylistButton.sc-button.sc-button-medium.sc-button-responsive.sc-button-selected {
 filter:drop-shadow(0px 0px 3px #f30)!important;
-  box-shadow:0px 0px 9px #f40;
-   color:#f40!important;
+  box-shadow:0px 0px 6px #f50;
+   color:#f60!important;
 }
 .sc-button-queue.addToNextUp.sc-button.sc-button-medium.sc-button-responsive.sc-button-selected:before {
   filter:drop-shadow(0px 0px 4px #f30)!important;
 }
 .modal__content .addToPlaylistButton.sc-button.sc-button-medium.sc-button-responsive.sc-button-selected:hover {
 filter:drop-shadow(0px 0px 3px #f30)!important;
-  box-shadow:0px 0px 1px #f40;
+  box-shadow:0px 0px 3px #f40;
   color:#c1c1c14c!important;
 }
 .modal__content .addToPlaylistButton.sc-button.sc-button-medium.sc-button-responsive:not(.sc-button-selected):hover {
-color:#f30!important;
-filter: drop-shadow(0px 0px 3px #812200)!important;
-box-shadow: 0px 0px 6px #f40;
+color:#f60!important;
+box-shadow: 0px 0px 3px #f60;
 }
 
 .modal__content .addToPlaylistButton.sc-button.sc-button-medium.sc-button-responsive:not(.sc-button-selected) {
-filter: drop-shadow(0px 0px 3px #812200)!important;
-box-shadow: 0px 0px 4px #f40;
+filter: drop-shadow(0px 0px 2px #f40)!important;
+box-shadow: 0px 0px 2px #f40;
 }
 
 .modal__content .addToPlaylistList__item {
@@ -2429,7 +2428,7 @@ visibility:hidden;
             }
         }
 @keyframes headercolour {
-72% { filter:contrast(140%)saturate(111%); }
+72% { filter:contrast(141%)saturate(117%); }
 }
 .shuffleControl:after {
   filter:brightness(123%);
@@ -2658,4 +2657,7 @@ margin-top:-45px;
 .commentBadge__body.sc-font-light a {
  color:#f30!important;
   font-weight:900;
+}
+.playControls__queue .sc-button-play {
+  right:3px;
 }
