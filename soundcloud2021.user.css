@@ -2767,3 +2767,6 @@ filter:hue-rotate(169deg)opacity(40%);
  filter: invert(1) sepia(9999%) contrast(207%);
   animation: fadeinside linear 1s;
 }
+.trackItem__image .sc-button-pause {
+  opacity:0;
+}
