@@ -957,15 +957,18 @@ background:radial-gradient(ellipse at top, #2d000030, #4800004d),radial-gradient
     filter: saturate(99%);
   }
   @keyframes gradientcolou {
-    45% {filter:contrast(200%)saturate(200%);}
+    45% {filter:contrast(220%)saturate(220%);}
     54% {transform:rotate(321deg);}
+    72% {filter:contrast(120%)saturate(130%);}
+    90% {filter:contrast(225%)saturate(225%);}
+    99% {filter:contrast(154%)saturate(180%);}
 }
   .fullListenHero.fullHero.l-inner-fullwidth .backgroundGradient {
   filter:contrast(154%)saturate(180%);
-  scale:3.69;
+  scale:3.43;
   animation-name:gradientcolou;
   animation-timing-function:linear;
-  animation-duration:72s;
+  animation-duration:27s;
   animation-iteration-count:infinite;
   }
   .backgroundGradient {
