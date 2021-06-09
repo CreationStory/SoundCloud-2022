@@ -11,11 +11,6 @@
     background-position:50% 0;
     background-repeat:repeat-y;
   }
-  @media(max-width:959px) {
-    body.sc-classic {
-      background: #123
-    }
-  }
   .header__logo {
     background: transparent
   }
@@ -61,6 +56,7 @@
   ::selection {
   color: #f50;
   background: #42424242;
+  text-shadow:0px 0px 3px #f40;
   }
 ::-webkit-scrollbar, ::-webkit-scrollbar:horizontal, ::-webkit-scrollbar:vertical {
 visibility:hidden;
@@ -232,8 +228,15 @@ visibility:hidden;
   }
   .sc-status-label.sc-status-label-dark.sc-status-label-pro-u {
     background-color: #fff0;
-    background-size: 99px 9px;
+    margin-top:3px;
+    transition:all 1s linear;
+    scale:0.81;
+    background-position:-18px;
     filter:opacity(0%);
+  }
+  .sc-status-label.sc-status-label-dark.sc-status-label-pro-u:hover {
+    filter:opacity(45%);
+    transition:all 0.27s linear;
   }
   .uploadedTarget__messageHighlight {
     color: #ccc
@@ -854,8 +857,13 @@ background:radial-gradient(ellipse at top, #2d000030, #4800004d),radial-gradient
   .loading.regular {
     visibility:hidden!important
   }
-  .listenEngagement__commentForm {
-    margin-bottom:14px;
+  .listenEngagement__commentForm .m-active {
+    scale:1.03;
+    transition:all 0.13s linear;
+  }
+  .listenEngagement__commentForm:not(.m-active) {
+    margin-bottom:9px;
+    margin-top:-5px;
   }
   .suggestedTags__listItem.selected {
     background-color: #0a0a0a
@@ -956,23 +964,27 @@ background:radial-gradient(ellipse at top, #2d000030, #4800004d),radial-gradient
     height: 849px;
     filter: saturate(99%);
   }
+  @keyframes gradientcolour {
+    22% {filter:contrast(200%)saturate(40%);}
+    54% {filter:contrast(170%)saturate(270%);}
+}
   @keyframes gradientcolou {
     45% {filter:contrast(220%)saturate(220%);}
-    54% {transform:rotate(321deg);}
-    72% {filter:contrast(120%)saturate(130%);}
-    90% {filter:contrast(225%)saturate(225%);}
-    99% {filter:contrast(154%)saturate(180%);}
+    72% {filter:contrast(111%)saturate(369%);}
 }
   .fullListenHero.fullHero.l-inner-fullwidth .backgroundGradient {
   filter:contrast(154%)saturate(180%);
-  scale:3.43;
   animation-name:gradientcolou;
   animation-timing-function:linear;
-  animation-duration:27s;
+  animation-duration:99s;
   animation-iteration-count:infinite;
   }
   .backgroundGradient {
   filter:contrast(154%)saturate(180%);
+  animation-name:gradientcolour;
+  animation-timing-function:linear;
+  animation-duration:72s;
+  animation-iteration-count:infinite;
   }
   .sc-button:disabled,
   .sc-button:disabled:hover,
@@ -1464,7 +1476,7 @@ background:radial-gradient(ellipse at top, #2d000030, #4800004d),radial-gradient
     filter: drop-shadow(0px 0px 2px #ff441a);
   }
   .soundActions {
-    margin-bottom: 0px;
+    margin-bottom: 2px;
     margin-top: 3px;
   }
   .sc-button-active.sc-button-focus,
@@ -1638,6 +1650,10 @@ filter: drop-shadow(0px 0px 4px #ff2700)!important;
 .headerSearch__submit:hover {
   mix-blend-mode:difference;
   filter:invert(100%) sepia(120%) saturate(4000%) hue-rotate(369deg) brightness(100%) contrast(120%);
+  transition:all 1.3s linear;
+}
+.headerSearch__submit {
+  transition:all 1.8s linear;
 }
 .errorPage {
   filter:drop-shadow(0px 0px 3px #ff40009e) sepia(100%) brightness(81%)  saturate(2222%);
@@ -1743,9 +1759,16 @@ filter: drop-shadow(0px 0px 4px #ff2700)!important;
 }
 .repostOverlay__message {
   overflow-x:unset;
+  text-shadow:0px 0px 1px #f30;
+}
+.repostOverlay__container {
+  padding-top:2px;
+  padding-bottom:4px;
+  padding-right:12px;
+  padding-left:6px;
 }
 .gritter-item a {
-  color:#f40;
+  color:#c1c1c1a4;
 }
 .soundTitle__additionalContainer {
   margin-left:23px;
@@ -1990,6 +2013,16 @@ left:4px!important;
 .listenDetails .sc-button-like:before {
 left:5px!important;
   scale:1!important;
+}
+.commentForm.commentForm__transition.m-small.visible {
+  filter:opacity(63%);
+  scale:1;
+  transition:all 0.369s linear;
+}
+.commentForm.commentForm__transition.m-small.visible.m-active {
+ scale:1.01;
+  transition:all 0.11s linear;
+  filter:opacity(200%)!important;
 }
 .commentForm.m-active .commentForm__wrapper {
     background:radial-gradient(ellipse at top left, #111, #000 420%);
@@ -2634,6 +2667,9 @@ animation: fadeinsider linear 0.54s!important;
 transition:all 0.18s linear;
 margin-top:-45px;
 }
+.userSidebar.sc-clearfix.sc-browsers-enable-gpu {
+transition:all 0.12s linear;
+}
 .l-top.sc-border-box.g-z-index-fixed {
   background:#111;
 }
@@ -2661,6 +2697,10 @@ margin-top:-45px;
 }
 .trackItem .sc-button-like, .trackItem .sc-button-repost {
   transition:all 0.27s linear;
+}
+.sc-status-icon-verified.sc-status-icon-medium {
+  margin-left:2px;
+  margin-right:-1px;
 }
 .sc-status-icon-verified {
 filter:hue-rotate(169deg)opacity(40%);
@@ -2711,8 +2751,21 @@ filter:hue-rotate(169deg)opacity(40%);
   filter:brightness(99%);
   transition:all 0.11s linear;
 }
-.tagsMain__title,
+@keyframes fox {
+            from {
+                filter:opacity(0%);
+            }
+            to {
+                filter:opacity(100%);
+            }
+        }
 .tabs__tabs {
+      animation: fox linear 0.639s;
+      animation-delay:0.44s;
+      animation-iteration-count: 1;
+      animation-fill-mode: both;
+}
+.tagsMain__title {
       animation: fadeinside linear 0.633s;
       animation-delay:0.45s;
       animation-iteration-count: 1;
@@ -2769,10 +2822,54 @@ filter:hue-rotate(169deg)opacity(40%);
 .conversationActions__userActions.sc-button-group .reportButton {
   margin-left:13px;
 }
+.systemPlaylistTrackList__item.sc-border-light-bottom img {
+ filter: invert(1) sepia(9999%) contrast(207%);
+  animation: fadeinside linear 1s;
+}
+.compactTrackListItem.sc-border-light-bottom img {
+ filter: invert(1) sepia(9999%) contrast(207%);
+  animation: fadeinside linear 1s;
+}
 .trackList__item.sc-border-light-bottom img {
  filter: invert(1) sepia(9999%) contrast(207%);
   animation: fadeinside linear 1s;
 }
 .trackItem__image .sc-button-pause {
   opacity:0;
+}
+.sc-status-label.sc-status-label-pro.sc-status-label-dark.sc-ir {
+  filter:opacity(0%);
+  transition:all 1s linear;
+}
+.sc-status-label.sc-status-label-pro.sc-status-label-dark.sc-ir:hover {
+  filter:opacity(45%);
+  transition:all 1s linear;
+}
+.dropdownMenu {
+  max-width:540px;
+  transition:all 0.45s linear;
+  filter:drop-shadow(0px 0px 1px #f30);
+}
+.repostOverlay__formButton.repostOverlay__formButtonDelete {
+  right:3px;
+  margin-right:13px;
+}
+.repostOverlay__formButtonContainer {
+  margin-right:-4px;
+  scale:0.9;
+}
+.repostOverlay__formRemainingLettersCount {
+  left:86%;
+}
+.repostOverlay__formInput {
+  max-width:96%;
+}
+.repostOverlay__close {
+  visibility:hidden
+}
+.repostOverlay__youReposted {
+  color:#f40!important;
+}
+.repostOverlay__message .sc-ministats:hover {
+  filter:invert(1) hue-rotate(369deg) sepia(9999%) contrast(9999%) brightness(100%) saturate(9999%);
 }
