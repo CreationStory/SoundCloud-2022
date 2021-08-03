@@ -307,7 +307,7 @@ visibility:hidden;
   .l-footer.standard,
   .l-fixed-top-one-column > .l-top,
   .sound__soundActions {
-    background: #1110;
+    background: #1110!important;
   }
   .sc-buylink-itunes:before,
   .license__icon {
@@ -976,7 +976,7 @@ background:radial-gradient(ellipse at top, #2d000030, #4800004d),radial-gradient
   filter:contrast(154%)saturate(180%);
   animation-name:gradientcolou;
   animation-timing-function:linear;
-  animation-duration:99s;
+  animation-duration:36.9s;
   animation-iteration-count:infinite;
   }
   .backgroundGradient {
@@ -1640,13 +1640,22 @@ filter: drop-shadow(0px 0px 4px #ff2700)!important;
     width:54%;
     margin-left:2%;
   }
-  .sc-classic .header>li>a:focus, .sc-classic .header__navMenu>li>a.selected {
+  .sc-classic .header>li>a:focus, .sc-classic .header__navMenu>li>a.selected:not(.header__moreButton) {
   background:radial-gradient(ellipse at top, #ff2f0052, #400000a3),radial-gradient(ellipse at bottom left, #1c042d, #b1410061);
   }
-  .header__navMenu>:hover {
+  .header__navMenu > li > a.selected, .header > li > a:focus, .userNav__item.selected, .userNav__button.selected, .header__navMenu > li > a.header__moreButton.selected {
+    background-color:#ff330033;
+}
+.header__userNavButton.selected, .sc-classic .header__userNavItem.selected {
+  background-color:#ff330033;
+}
+  .header__navMenu .selected:hover {
   filter:drop-shadow(0px 9px 12px #000);
   backdrop-filter:blur(3px);
   }
+.header__navMenu .selected {
+  transition: all 1.3s linear;
+}
 .headerSearch__submit:hover {
   mix-blend-mode:difference;
   filter:invert(100%) sepia(120%) saturate(4000%) hue-rotate(369deg) brightness(100%) contrast(120%);
@@ -2872,4 +2881,45 @@ filter:hue-rotate(169deg)opacity(40%);
 }
 .repostOverlay__message .sc-ministats:hover {
   filter:invert(1) hue-rotate(369deg) sepia(9999%) contrast(9999%) brightness(100%) saturate(9999%);
+}
+.commentItem .sc-button-delete {
+  animation: fadeoutplay linear 0.272s!important;
+  top:6px;
+  transition:all 0.27s linear;
+}
+.commentItem:hover .sc-button-delete {
+  animation: fadeinside linear 0.63s!important;
+}
+.deleteCommentForm {
+  filter:drop-shadow(0px 0px 0px #f30)!important;
+  font-size:11px;
+  margin-bottom:-11px;
+}
+.deleteCommentForm__actions .sc-button {
+  transition:all 0.369s linear;
+  font-size:12px;
+  top:-15px;
+  margin-left:12px;
+  filter:drop-shadow(0px 0px 1.2px #f30)!important;
+  text-shadow:0px 0px 1px #fff;
+  box-shadow:0px 0px 1px #f20;
+}
+.deleteCommentForm__actions .sc-button:hover {
+  box-shadow:0px 0px 1px #f20;
+  color:#f40!important;
+  transition:all 0.18s linear;
+  text-shadow:0px 0px 2px #f20;
+}
+.sc-classic .header__navMenu>li>a:hover:not(.selected) {
+  background:radial-gradient(ellipse at top, #ff2f0033, #40000069),radial-gradient(ellipse at bottom left, #1c042d69, #b141003d);
+  transition:all 0.11s linear;
+  text-shadow:0px 0px 2px #fff;
+}
+.sc-classic .header__navMenu>li>a:not(.selected) {
+  transition:all 0.45s linear;
+}
+.sc-classic .header__navMenu>li>a:hover.selected {
+  text-shadow:0px 0px 1px #fff;
+  transition:all 0.45s linear;
+  color:#f40!Important;
 }
