@@ -1991,14 +1991,16 @@ color:#f40;
   filter:drop-shadow(0px 0px 2px #ff440081);
 }
 .insightsSidebarModule {
-  padding:0px!important;
-  font-size:10px!important;
+  padding:0!important;
+  margin-top:-9px;
+  margin-bottom:18px;
 }
 .insightsSidebarModule__title {
   margin-bottom:-9px!important;
+  color:#ccc!important;
 }
 .insightsSidebarModule__plays {
-  margin-bottom:0px!important;
+  margin-bottom:1px!important;
 }
 .insightsSidebarModule__timeframe {
   margin-bottom:9px!important;
@@ -2013,6 +2015,13 @@ color:#f40;
 }
 .sc-button.sc-button-white.sc-button-large.insightsSidebarModule__button {
   height:27px!important;
+}
+.sc-button.sc-button-white.sc-button-large.insightsSidebarModule__button:hover {
+  background:radial-gradient(ellipse at bottom left, #99000045, #ffffff11),radial-gradient(ellipse at top, #f20, #000);
+  color:#fff!important;
+}
+.tileGallery__sliderButton {
+transition:all 0.18s linear!important;
 }
 .tileGallery__slider--large, .tileGallery__slider--normal {
   padding-top:9px;
@@ -3196,4 +3205,19 @@ transition:all 0.18s linear;
 }
 .sc-classic .header__navMenu>li>a.header__moreButton {
 transition:all 0s linear;
+}
+.sc-button-copylink {
+visibility:hidden;
+transform:scale(0);
+height:0!important;
+width:0!important;
+margin:0!important;
+padding:0!important;
+}
+.sc-button-small.sc-button-edit {
+margin-left:-27px!important;
+margin-right:54px!important;
+}
+.sidebarModule.whoToFollowModule {
+padding-top:9px;
 }
