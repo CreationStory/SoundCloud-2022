@@ -178,6 +178,7 @@ visibility:hidden;
   .commentBadge:hover .commentBadge__title a {
     color: #ccc;
     outline:none;
+    transition:all 0.09s linear;
   }
   a.sc-link-dark:hover,
   a.sc-link-medium:hover,
@@ -271,7 +272,9 @@ visibility:hidden;
   .compactTrackList__moreLink:hover,
   .compactTrackList__moreLink:focus,
   .trackItem.hover,
+  .sc-classic .trackItem.hover,
   .trackItem.active,
+  .sc-classic .trackItem.active,
   .chartTrack.m-playing,
   .chartTrack:hover,
   .listenLogin {
@@ -285,13 +288,29 @@ visibility:hidden;
   .compactTrackListItem.clickToPlay:hover .compactTrackListItem__additional,
   .compactTrackListItem.clickToPlay:focus .compactTrackListItem__additional,
   .trackItem:not(.m-disabled).hover .trackItem__additional,
-  .trackItem:not(.m-disabled).active .trackItem__additional {
+  .trackItem:not(.m-disabled).active .trackItem__additional,
+  .sc-classic .trackItem:not(.m-disabled).hover .trackItem__additional,
+  .sc-classic .trackItem:not(.m-disabled).active .trackItem__additional {
     background: #0a0a0a;
-    background: linear-gradient(to right, rgba(2, 0, 1, 0), #ff330017 45px);
+    background: linear-gradient(to right, rgba(2, 0, 1, 0), #ff340017 18px);
     border-radius:4px;
   }
-  .trackItem__additional {
-  padding: 0 9px 0 1%;
+  .sc-classic .trackItem .sc-button-like {
+  margin-right:6px!important;
+  }
+  .trackItem__additional, .sc-classic .trackItem__additional {
+  padding: 0 9px 0 27px;
+  margin-left:-4px;
+  }
+  .sc-classic .trackItem:not(.m-disabled).active .trackItem__trackTitle:focus, .sc-classic .trackItem:not(.m-disabled).active .trackItem__trackTitle:hover {
+    color:#f81;
+    filter:drop-shadow(0px 0px 1px #f40);
+    text-shadow:0px 0px 0px #f40;
+    transition:all 0.18s linear;
+  }
+    .sc-classic .trackItem:not(.m-disabled).active .trackItem__trackTitle:focus, .sc-classic .trackItem:not(.m-disabled).active .trackItem__trackTitle {
+    filter:drop-shadow(0px 0px 3px #f408);
+      transition:all 0.18s linear;
   }
   .createPlaylistSuggestion__addContainer {
     background: linear-gradient(to right, rgba(17, 17, 17, 0.1), #111 20px)
@@ -316,16 +335,16 @@ visibility:hidden;
   .sc-snippet-badge-grey {
     border-color: #333
   }
-  .soundBadge__additional {
-    margin-right:-20px!important;
-    margin-top:-6px!important;
-    background: linear-gradient(to right, rgba(17, 17, 17, 0.12), #111 15px)!important;
+  .soundBadge__additional, .sc-classic .soundBadge__additional {
+    margin-right:-18px!important;
+    margin-top:-7px!important;
+    background: linear-gradient(to right, rgba(18, 18, 18, 0.27), #111 18px)!important;
   }
   .soundTitle__title.sc-link-dark.sc-link-primary {
     margin-left:2px;
   }
   .sc-button-more.sc-button.sc-button-small.sc-button-icon.sc-button-responsive {
-  margin-left:-9px;
+  margin-left:-18px;
   }
   .image__whiteOutline .image__full, .sc-classic .image__whiteOutline .image__full {
     border-color: #1a1a1a
@@ -333,13 +352,13 @@ visibility:hidden;
   .l-footer.standard,
   .l-fixed-top-one-column > .l-top,
   .sound__soundActions {
-    background: #1110!important;
+    background: #111!important;
   }
   .sc-buylink-itunes:before,
   .license__icon {
     filter: invert(1)
   }
-  .repostOverlay__container {
+  .sc-classic .repostOverlay__container, .repostOverlay__container {
     background-color: #111;
     border-color: #1a1a1a
   }
@@ -506,11 +525,15 @@ visibility:hidden;
     color: #ccc
   }
   .playbackSoundBadge__titleLink:hover,
-  .playbackSoundBadge__titleLink:focus,
-  a.playbackSoundBadge__lightLink:hover,
-  a.playbackSoundBadge__lightLink:focus {
+  a.playbackSoundBadge__lightLink:hover {
     color: white
   }
+.playbackSoundBadge__titleLink:focus {
+color:#666;
+}
+a.playbackSoundBadge__lightLink:focus {
+color:#ff621d;
+}
   .g-dark textarea,
   .g-dark select,
   .g-dark input[type="text"],
@@ -850,7 +873,7 @@ background: radial-gradient(ellipse at bottom, #2d070063, #00000000),radial-grad
   .quotaMeterWrapper {
     background-color: #111
   }
-  .l-vertical-bar {
+  .l-vertical-bar, .featuredProfiles {
       animation: fadeinside linear 0.691s;
       animation-delay:0.9s;
       animation-iteration-count: 1;
@@ -889,10 +912,10 @@ background: radial-gradient(ellipse at bottom, #2d070063, #00000000),radial-grad
   .profileHeaderInfo__additional,
   .profileHeaderInfo__userName,
   .profileHeaderInfo__verifiedBadge {
-      animation: fadeinside linear 4.5s;
+      animation: fadeinside linear 3.21s;
       animation-iteration-count: 1;
       animation-fill-mode: both;
-      animation-delay:3s;
+      animation-delay:1.18s;
   }
   .loading.regular {
     visibility:hidden!important
@@ -931,7 +954,7 @@ background: radial-gradient(ellipse at bottom, #2d070063, #00000000),radial-grad
   .quotaMeter__dropdownButton:after {
     filter: invert(0.5)
   }
-  .conversation__actions {
+  .conversation__actions, .sc-classic .conversation__actions {
     background: #111;
     box-shadow: 0 1px 0 #111
   }
@@ -943,7 +966,13 @@ background: radial-gradient(ellipse at bottom, #2d070063, #00000000),radial-grad
   .inboxItem.unread,
   .inboxItem.active,
   .inbox__item:before,
-  .spotlightResults__item.selected {
+  .spotlightResults__item.selected,
+  .sc-classic .inboxItem:hover,
+  .sc-classic .inboxItem:focus,
+  .sc-classic .inboxItem.unread,
+  .sc-classic .inboxItem.active,
+  .sc-classic .inbox__item:before,
+  .sc-classic .spotlightResults__item.selected {
     background-color: #0a0a0a
   }
   .conversation__form {
@@ -1257,7 +1286,12 @@ background: radial-gradient(ellipse at bottom, #2d070063, #00000000),radial-grad
   .sc-classic .g-tabs-link:visited.sc-classic .g-tabs {
     font-size: 15px;
     filter: drop-shadow(1px 0px 0px rgb(237, 78, 35, 0.45));
-    transition:all 0.22s linear;
+    transition:all 0.321s linear;
+  }
+  .sc-classic .g-tabs-link:hover,
+  .sc-classic .g-tabs-link:visited:hover.sc-classic .g-tabs:hover {
+    filter: drop-shadow(1px 0px 2px #ff540081);
+    transition:all 0.12s linear;
   }
   .fullHero__playerArea, .sc-classic .fullHero__playerArea {
     visibility:visible;
@@ -1390,7 +1424,7 @@ background: radial-gradient(ellipse at bottom, #2d070063, #00000000),radial-grad
   }
   .g-type-shrinkwrap-large-primary {
     padding: 0px 11px 0px 9px;
-    margin-bottom:4px!important;
+    margin-bottom:0px!important;
     margin-top:0px!important;
 }
   .profileHeaderInfo__additional {
@@ -1451,34 +1485,35 @@ background: radial-gradient(ellipse at bottom, #2d070063, #00000000),radial-grad
     left: 5px;
   }
   .playbackTimeline__progressHandle {
-    border: 1px dashed #ff4200;
-    border-radius: 27%;
-    height: 10px;
+    border: 2px dashed #ff4200;
+    border-radius: 81%;
+    height: 11px;
     width: 11px;
     background-color: #f45d1b;
     box-sizing: border-box;
     margin-top: -5px;
-    margin-left: -8px;
+    margin-left: -4px;
     opacity: 0;
-    transition: opacity .27s;
+    transition: opacity .45s;
     animation-name: spinsun;
-    animation-duration: 5000ms;
+    animation-duration: 321ms;
     animation-iteration-count: infinite;
-    transform-origin: 45%;
+    transform-origin: 49%;
     animation-timing-function: linear;
   }
 
   @keyframes spinsun {
     from {
-      transform: rotate(1deg);
+      transform: rotate(360deg);
     }
     to {
-      transform: rotate(360deg);
+      transform: rotate(1deg);
     }
   }
 
   a.sc-link-light {
     color: #ff621d;
+    transition:all 0.18s ease-out;
   }
   .shuffleControl {
     margin-left: 9px!important;
@@ -1500,7 +1535,7 @@ background: radial-gradient(ellipse at bottom, #2d070063, #00000000),radial-grad
     padding: 14px;
     left: 6px;
   }
-  .sc-button-small.sc-button-follow:not(.sc-button-stretch-icon) {
+  .sc-button-small.sc-button-follow:not(.sc-button-stretch-icon):not(.playbackSoundBadge__follow) {
     filter: drop-shadow(0 0 0 transparent);
     color: #d9621d!important;
   margin-top:9px;
@@ -1692,7 +1727,7 @@ filter: drop-shadow(0px 0px 4px #ff2700)!important;
     margin-left:2%;
   }
   .sc-classic .header>li>a:focus, .sc-classic .header__navMenu>li>a.selected:not(.header__moreButton) {
-  background:radial-gradient(ellipse at top, #ff2f0052, #400000a3),radial-gradient(ellipse at bottom left, #1c042d, #b1410061);
+  background:radial-gradient(ellipse at top, #ff2f0081, #4e000054),radial-gradient(ellipse at bottom left, #05040400, #0000)
   }
   .header__navMenu > li > a.selected, .header > li > a:focus, .userNav__item.selected, .userNav__button.selected, .header__navMenu > li > a.header__moreButton.selected {
     background-color:#ff330033;
@@ -1738,9 +1773,23 @@ filter: drop-shadow(0px 0px 4px #ff2700)!important;
 
 .sidebarHeader__more:not(.p) {
   filter:invert(39%) sepia(100%) saturate(4000%) hue-rotate(369deg) brightness(100%) contrast(100%);
+  transition:all 0.09s linear;
 }
 .sidebarHeader__more:hover {
   text-shadow: 0px 0px 3px #fff;
+  transition:all 0.09s linear;
+}
+.sc-classic .sidebarHeader:hover, .sidebarHeader:hover {
+text-shadow: 0px 0px 3px #fff;
+transition:all 0.09s linear;
+}
+.sc-classic .sidebarHeader__title {
+text-shadow:none;
+transition:all 0.09s linear;
+}
+.sc-classic .sidebarHeader__title:hover {
+text-shadow:0px 0px 1px #fff;
+transition:all 0.09s linear;
 }
 .sc-artwork.sc-artwork-placeholder-0 {
    background:radial-gradient(ellipse at top, #ff56008f -400%, #4800004d),radial-gradient(ellipse at bottom, #0f00991c 63%, #ff2c170f);
@@ -1811,6 +1860,9 @@ filter: drop-shadow(0px 0px 4px #ff2700)!important;
 } 
 .userDialogBadge__action {
   margin-bottom:4px;
+}
+.userDialogBadge__action .sc-button-selected {
+margin-left:1px!important;
 }
 .conversationMessage .sound .sc-button-responsive {
     filter:drop-shadow(0px 0px 2px #f31)!important;
@@ -2316,6 +2368,12 @@ visibility:hidden;
   font-size:14px;
   font-weight:700;
 }
+.listenArtistInfo .sc-button-follow.sc-button.sc-button-small.sc-button-responsive {
+  margin-top:9px;
+  margin-left:0px;
+  font-size:13px;
+  font-weight:700;
+}
 .userBadge .sc-button-follow.sc-button.sc-button-small {
 padding:11px 11px 11px 17px!important;
 }
@@ -2785,7 +2843,7 @@ transition:all 0.12s linear;
 .listenDetails__partialInfo .sc-type-small.sc-text-body a:hover {
   color:#ccc;
   transition:all 0.13s linear;
-  filter:drop-shadow(0px -9px 0px #ff440321);
+  filter:drop-shadow(0 0px 9px #ff440372);
 }
 .trackItem .sc-button-like, .trackItem .sc-button-repost {
   transition:all 0.27s linear;
@@ -3008,18 +3066,18 @@ margin-right: 18px;
   text-shadow:0px 0px 2px #f20;
 }
 .sc-classic .header__navMenu>li>a:hover:not(.selected) {
-  transition:all 0.18s linear;
-  text-shadow:0px 0px 2px #fff;
+  transition:all 0.123s linear;
+  background:radial-gradient(ellipse at bottom left, #98000042, #ffffff13),radial-gradient(ellipse at top, #f30, #000);
+  text-shadow:0px 0px 9px #fff;
+  color:#fff;
 }
 .sc-classic .header__navMenu>li>a:not(.selected) {
-  transition:all 0.09s linear;
+  transition:all 0.23s linear;
 }
 .sc-classic .header__navMenu>li>a:hover.selected {
-    text-shadow: 0px 0px 9px #f70;
-    filter: drop-shadow(0px 0px 4px #f30)!important;
-    background-color: #ff4100c9;
-    transition: all 0.05s linear;
-    color: #f40!Important;
+    text-shadow: 0px 0px 1px #f81;
+    background-color:#000;
+    color: #f72!important;
 }
 .sc-classic .header__link {
 font-weight:450;
@@ -3049,4 +3107,93 @@ transition:all 0.23s linear;
   font-size:14px!important;
   font-weight:700!important;
   padding:4px 9px 18px 12px!important;
+}
+.sc-buylink, .sc-buylink:visited {
+transition:all 0.118s linear;
+}
+.sc-buylink:hover, .sc-buylink:visited:hover {
+color:#f40;
+filter:drop-shadow(0 0 4px #ff450081)!important;
+text-shadow:0 0 1px #f40;
+transition:all 0.118s linear;
+}
+.listenDetails__login {
+visibility:hidden;
+height:0;
+width:0;
+margin:0;
+padding:0;
+}
+.sc-classic .moreActions__group:not(:first-child) {
+border: 9px solid #f400;
+}
+.sc-classic .moreActions__group:not(:last-child) {
+border: 9px solid #f400;
+}
+.moreActions__group {
+border:9px solid #f400;
+}
+.collectionNav.g-tabs.g-tabs-large {
+transform:scale(1.23);
+margin-left:123px;
+}
+.collectionNav.g-tabs.g-tabs-large a:hover {
+text-shadow:0 0 9px #ff590072;
+transition:all 0.18s linear;
+}
+.usersList__list .sc-button-follow.sc-button.sc-button-small.sc-button-responsive {
+font-size:11px;
+}
+.listenDetails .sc-type-small.sc-text-body a {
+text-shadow:0 0 2px #ff810045;
+font-weight:400;
+letter-spacing:0.009vw;
+color:#f60;
+filter:drop-shadow(0px 3px 2px #ff540027);
+transition:all 0.45s linear;
+}
+.listenDetails .sc-type-small.sc-text-body a:hover {
+text-shadow:0px 0px 2px #ff540045;
+transition:all 0.23s linear;
+color:#fff;
+filter:drop-shadow(0px 0px 2px #ff540045);
+}
+.sc-classic .searchTitle, .tagsMain .tabs__tabs, .sc-classic .searchTitle__text {
+background:rgba(9, 9, 9, 0)!important;
+border-color:#f60!important;
+}
+.sc-classic .fullHero__parentLink {
+margin-top: -84px;
+margin-left: 81px;
+}
+.searchItem .sc-button-follow {
+margin-top:1px;
+margin-bottom:8px;
+text-shadow:0px 0px 3px #ff550054;
+transition:all 0.369s linear;
+}
+.searchItem .sc-button-follow:hover {
+text-shadow:0px 0px 9px #f40;
+transition:all 0.27s linear;
+}
+.searchItem .userItem__actions {
+filter:drop-shadow(0px 0px 1px #f30);
+}
+.sc-classic .profileHeaderInfo__additional {
+margin-top:0;
+}
+.profileHeaderInfo__userName, .profileHeaderInfo__additional {
+animation-delay:2.7s!important;
+}
+.sc-button-play:hover {
+transition:all 0.27s linear;
+}
+.sc-button-play {
+transition:all 0.72s linear;
+}
+.sc-classic .playableTile__mainHeading {
+transition:all 0.18s linear;
+}
+.sc-classic .header__navMenu>li>a.header__moreButton {
+transition:all 0s linear;
 }
