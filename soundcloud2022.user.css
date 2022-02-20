@@ -262,9 +262,10 @@ visibility:hidden;
   a.compactTrackList__moreLink:focus {
     outline-color: #333
   }
+  .sc-classic .dropbar__content,
   .dropbar__content,
   .listenContent__inner, .sc-classic .listenContent__inner {
-    background-color: #111
+    background-color: #111;
   }
   .compactTrackListItem.clickToPlay.active,
   .compactTrackListItem.clickToPlay:hover,
@@ -281,7 +282,7 @@ visibility:hidden;
     background-color: #35353554;
     transition: all 0.39s linear;
   }
-  .compactTrackListItem__additional {
+  .sc-classic .compactTrackListItem__additional {
     padding: 0 8px 0 27px;
 }
   .compactTrackListItem.clickToPlay.active .compactTrackListItem__additional,
@@ -728,6 +729,7 @@ background: radial-gradient(ellipse at bottom, #2d070063, #00000000),radial-grad
   }
   .g-tabs,
   .g-modal-title-h1,
+  .sc-classic .g-modal-title-h1,
   .g-form-section-head,
   .collection.m-overview .collection__section:not(:last-child),
   .searchTitle__text,
@@ -812,7 +814,7 @@ background: radial-gradient(ellipse at bottom, #2d070063, #00000000),radial-grad
   .embedPanel__upsellTabLink {
     background-color: #1a1a1a
   }
-  .composeMessage__bottomWrapper {
+  .composeMessage__bottomWrapper, .sc-classic .composeMessage__bottomWrapper {
     border-color: #333
   }
   .modal.modalWhiteout {
@@ -3221,3 +3223,38 @@ margin-right:54px!important;
 .sidebarModule.whoToFollowModule {
 padding-top:9px;
 }
+.playlistConsumerSubUpsell {
+visibility:hidden;
+transform:scale(0);
+height:0!important;
+width:0!important;
+margin:0!important;
+padding:0!important;
+}
+  .sc-classic .compactTrackListItem.clickToPlay.active,
+  .sc-classic .compactTrackListItem.clickToPlay:hover,
+  .sc-classic .compactTrackListItem.clickToPlay:focus,
+  .sc-classic .compactTrackList__moreLink:hover,
+  .sc-classic .compactTrackList__moreLink:focus,
+  .sc-classic .trackItem.hover,
+  .sc-classic .trackItem.active,
+  .sc-classic .chartTrack.m-playing,
+  .sc-classic .chartTrack:hover,
+  .sc-classic .listenLogin {
+    background-color: #35353554;
+    transition: all 0.39s linear;
+  }
+  .sc-classic .compactTrackListItem__additional {
+    padding: 0 8px 0 27px;
+}
+  .sc-classic .compactTrackListItem.clickToPlay.active .compactTrackListItem__additional,
+  .sc-classic .compactTrackListItem.clickToPlay:hover .compactTrackListItem__additional,
+  .sc-classic .compactTrackListItem.clickToPlay:focus .compactTrackListItem__additional,
+  .sc-classic .trackItem:not(.m-disabled).hover .trackItem__additional,
+  .sc-classic .trackItem:not(.m-disabled).active .trackItem__additional,
+  .sc-classic .trackItem:not(.m-disabled).hover .trackItem__additional,
+  .sc-classic .trackItem:not(.m-disabled).active .trackItem__additional {
+    background: #0a0a0a;
+    background: linear-gradient(to right, rgba(2, 0, 1, 0), #ff340017 18px);
+    border-radius:4px;
+  }
